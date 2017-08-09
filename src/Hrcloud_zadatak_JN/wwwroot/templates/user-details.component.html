@@ -1,0 +1,48 @@
+﻿<a ng-click="$ctrl.addBookmark()"><span class="glyphicon glyphicon-bookmark"></span></a>
+<form ng-if="$ctrl.user" name="form" ng-cloak ng-submit="$ctrl.onSubmit()" novalidate>
+    <div class="form-group" ng-class="{'has-error': form.firstName.$invalid && !form.firstName.$pristine}">
+        <label for="firstName">First name:</label>
+        <input type="text" name="firstName" class="form-control" id="firstName" ng-model="$ctrl.user.firstName" required /> 
+        <div ng-if="!form.firstName.$pristine" ng-messages="form.firstName.$error">
+            <p style="color:red" ng-message="required">First name is required.</p>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': form.lastName.$invalid && !form.lastName.$pristine}">
+        <label for="lastName">Last name:</label>
+        <input type="text" name="lastName" class="form-control" id="lastName" ng-model="$ctrl.user.lastName" required />
+        <div ng-if="!form.lastName.$pristine" ng-messages="form.lastName.$error">
+            <p style="color:red" ng-message="required">Last name is required.</p>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': form.address.$invalid && !form.address.$pristine}">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" name="address" ng-model="$ctrl.user.address" required />
+        <div ng-if="!form.address.$pristine" ng-messages="form.address.$error">
+            <p style="color:red" ng-message="required">Address is required.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <tags-input name="tags" ng-model="$ctrl.user.tagCollection" display-property="tagName"  placeholder="Add tags" >
+        </tags-input>       
+    </div>
+    <div class="form-group" >
+        <tags-input name="phone" ng-model="$ctrl.user.phoneCollection" display-property="phoneNumber" allowed-tags-pattern="^(\+\d{9,15})+$" placeholder="Add phone numbers">
+        </tags-input>  
+
+        <div ng-if="form.phone.$invalid" style="color:red">
+             <p>Phone number must be in international +39991313133 format, the lenght must be between 9 and 15 characters</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <tags-input name="email" ng-model="$ctrl.user.emailCollection" display-property="emailAddress"  allowed-tags-pattern="[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" placeholder="Add emails">
+        </tags-input>
+        <div ng-if="form.email.$invalid" style="color:red">
+            <p>Email is not in correct format.</p>
+        </div>
+    </div>
+
+    <button type="submit" ng-disabled="form.$invalid || $ctrl.errors || form.$pristine" class="btn btn-primary">Save</button>
+
+</form>
+<div ng-if="!$ctrl.user "class="ajax-loader loader"></div>
+<error-messages-component errors="$ctrl.errors"></error-messages-component>

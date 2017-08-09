@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TestZadatak</title>
+    <base href="/" />
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/ng-tags-input/ng-tags-input.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" 
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+              crossorigin="anonymous"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/ng-tags-input/ng-tags-input.min.css" />
+       
+      
+    </environment>
+</head>
+<body>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>Logo</p>
+            </footer>
+        </div>
+    <environment names="Development">
+        <script src="~/lib/angular/angular.js"></script>
+        <script src="~/lib/ng-tags-input/ng-tags-input.js"></script>
+        <script src="~/lib/angular-messages/angular-messages.js"></script>
+        <script src="~/lib/angular-route/angular-route.js"></script>
+        <script src="~/lib/angular-smart-table/dist/smart-table.js"></script>
+        <script src="~/dist/app-modules.js"></script>
+        <script src="~/dist/app-directives.js"></script>
+        <script src="~/dist/app-services.js"></script>
+        <script src="~/dist/app-filters.js"></script>    
+        <script src="~/dist/app-components.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"
+                asp-fallback-src="~/lib/angular/angular.min.js"
+                asp-fallback-test="window.angular"
+                integrity="sha384-hOYZLmROZQbcYRe8tUP/9bcPGwwDxXf81Rnld8ETuGcGM45lysORQcHwyEFlYlaO" 
+                crossorigin="anonymous">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"
+                asp-fallback-src="~/lib/angular-route/angular-route.min.js"
+                asp-fallback-test="window.angular && window.angular.module('ngRoute')"
+                integrity="sha384-W3m3W4hI4YtZnxvmc9GtTeIhlUuL8o3YArFbMB1RM2dyq01PaL1dwEM/q4q/TJZB"
+                crossorigin="anonymous">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-smart-table/2.1.8/smart-table.min.js"
+                asp-fallback-src="~/lib/angular-smart-table/dist/smart-table.min.js"
+                asp-fallback-test="window.angular && window.angular.module('smart-table')"
+                integrity="sha384-w81ueT4hfjsNpbxLVd8AIF+xt1q6zqQunz7b1bpHJMoBGyhyatxvzuDhcuVYsdAK"
+                crossorigin="anonymous">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.2.0/ng-tags-input.min.js"
+                asp-fallback-src="~/lib/ng-tags-input/ng-tags-input.min.js"
+                asp-fallback-test="window.angular && window.angular.module('ngTagsInput')"
+                integrity="sha384-6cNq1PH6l/u+iGacGd/tyYwySFssQTXBXvrDXy/Rt8snXIIGk5/seS2SVkGkhpuX"
+                crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.6.5/angular-messages.min.js"
+                asp-fallback-src="~/lib/angular-messages/angular-messages.min.js"
+                asp-fallback-test="window.angular && window.angular.module('ngMessages')"
+                integrity="sha384-Aj8THTeVecWnrHIcxDJDkJzYwd3qUHtcYCr2IWzV2bg9YCl/GyNAgH7yIokH+2aT"
+                crossorigin="anonymous">
+        </script>
+        <script src="~/dist/app-modules.js"></script>
+        <script src="~/dist/app-directives.js"></script>
+        <script src="~/dist/app-services.js"></script>
+        <script src="~/dist/app-filters.js"></script>
+        <script src="~/dist/app-components.js"></script>        
+    </environment>
+</body>
+</html>

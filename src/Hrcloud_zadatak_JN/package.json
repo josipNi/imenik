@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "name": "Imenik_JN",
+  "private": true,
+  "devDependencies": {
+  },
+  "dependencies": {
+    "angular": "latest",
+    "bootstrap": "latest",
+    "angular-smart-table": "latest",
+    "angular-route": "latest",
+    "ng-tags-input": "latest",
+    "angular-messages": "latest"
+  }
+}

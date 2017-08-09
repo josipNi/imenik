@@ -1,0 +1,67 @@
+﻿<a href="user/"><span class="glyphicon glyphicon-plus">Add</span></a>
+<div>  
+    <button type="button" class="btn btn-default"  ng-click="$ctrl.deleteCollection()" ng-disabled="$ctrl.collection.length === 0 || $ctrl.isLoading"><span class="glyphicon glyphicon-remove">Remove</span></button>
+</div>
+<table st-table="$ctrl.displayedCollection" st-safe-src="$ctrl.userCollection" class="table table-striped" st-set-filter="myStrictFilter"  st-pipe="$ctrl.searchOnServer">
+    <thead>
+        <tr>           
+            <th>
+                <div class="input-group"> <!--ng-model="$ctrl.searchTerm" ng-keyup="$event.keyCode == 13 && $ctrl.searchOnServer()"-->
+                    <input placeholder="global search" st-search=""/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                </div>
+            </th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Address</th>
+            <th>Tags</th>
+            <th>Phones</th>
+            <th>Emails</th>
+            <th>Edit</th>
+            <th> Tags filter
+            <span>
+            </span>
+                <select st-search="tagName">
+                    <option value="">ALL</option>
+                    <option ng-repeat="filterTag in $ctrl.filterTags" value="{{filterTag}}">
+                        {{filterTag}}
+                    </option>
+                </select>
+            </th>
+        </tr>
+    </thead>
+    <tbody ng-if="!$ctrl.isLoading">
+        <tr ng-repeat="row in $ctrl.displayedCollection">
+            <td><multi-select row="row" collection="$ctrl.collection"></multi-select></td>
+            <td>{{row.firstName}}</td>
+            <td>{{row.lastName}}</td>
+            <td>{{row.address}}</td>
+            <td>
+                <div ng-repeat="tag in row.tagCollection">
+                    <span>{{tag.tagName}}</span>
+                </div>
+            </td>
+            <td>
+                <div ng-repeat="phone in row.phoneCollection">
+                    <span>
+                        {{phone.phoneNumber}}
+                    </span>
+                </div>
+            </td>
+            <td>
+                <div ng-repeat="email in row.emailCollection">
+                    <span>{{email.emailAddress}}</span>
+                </div>
+            </td>
+            <td>
+                <a href="user/{{row.id}}"><span class="glyphicon glyphicon-edit"></span></a>
+            </td>
+        </tr>
+    </tbody>
+    <tbody ng-if="$ctrl.isLoading">
+        <tr>
+            <td colspan="4" class="text-center">Loading ... </td>
+        </tr>
+    </tbody>
+</table>
+<error-messages-component errors="$ctrl.errors"></error-messages-component>
