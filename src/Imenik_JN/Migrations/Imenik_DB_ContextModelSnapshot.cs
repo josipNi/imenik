@@ -7,7 +7,7 @@ using System;
 namespace Imenik_JN.Migrations
 {
     [DbContext(typeof(Imenik_DB_Context))]
-    partial class Hrcloud_DB_ContextModelSnapshot : ModelSnapshot
+    partial class Imenik_DB_ContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
