@@ -5,6 +5,6 @@ namespace Imenik_JN.Server.Data.Repositories
 {
     public class TagRepository : EntityBaseRepository<Tag>, ITagRepository
     {
-        public TagRepository(Hrcloud_DB_Context context) : base(context) { }
+        public TagRepository(Imenik_DB_Context context) : base(context) { }
     }
 }

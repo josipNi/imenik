@@ -7,7 +7,7 @@ using Imenik_JN.Server.Data;
 
 namespace Imenik_JN.Migrations
 {
-    [DbContext(typeof(Hrcloud_DB_Context))]
+    [DbContext(typeof(Imenik_DB_Context))]
     [Migration("20170727171443_Init")]
     partial class Init
     {

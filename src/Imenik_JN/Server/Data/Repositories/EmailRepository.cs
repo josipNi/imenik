@@ -5,6 +5,6 @@ namespace Imenik_JN.Server.Data.Repositories
 {
     public class EmailRepository : EntityBaseRepository<Email>, IEmailRepository
     {
-        public EmailRepository(Hrcloud_DB_Context context) : base(context) { }
+        public EmailRepository(Imenik_DB_Context context) : base(context) { }
     }
 }

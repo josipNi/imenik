@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Imenik_JN.Server.Data
 {
-    public class Hrcloud_DB_Context : DbContext
+    public class Imenik_DB_Context : DbContext
     {
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
         public virtual DbSet<Email> Email { get; set; }
         public virtual DbSet<Phone> Phone { get; set; }
 
-        public Hrcloud_DB_Context(DbContextOptions<Hrcloud_DB_Context> options) : base(options) { }
+        public Imenik_DB_Context(DbContextOptions<Imenik_DB_Context> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

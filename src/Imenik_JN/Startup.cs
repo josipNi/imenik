@@ -28,7 +28,7 @@ namespace Imenik_JN
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<Hrcloud_DB_Context>(options =>
+            services.AddDbContext<Imenik_DB_Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IUserRepository, UserRepository>();

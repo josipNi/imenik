@@ -12,7 +12,7 @@ namespace Imenik_JN.Server.Data
 
         public static void InitializeDatabase(IServiceProvider serviceProvider, int amount)
         {
-            Hrcloud_DB_Context DB_context = serviceProvider.GetRequiredService<Hrcloud_DB_Context>();
+            Imenik_DB_Context DB_context = serviceProvider.GetRequiredService<Imenik_DB_Context>();
 
             DB_context.Database.Migrate();
 

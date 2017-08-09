@@ -14,9 +14,9 @@ namespace Imenik_JN.Server.Data.Repositories
             where T : class, IEntityBase, new()
     {
 
-        private Hrcloud_DB_Context _context;
+        private Imenik_DB_Context _context;
         #region Properties
-        public EntityBaseRepository(Hrcloud_DB_Context context)
+        public EntityBaseRepository(Imenik_DB_Context context)
         {
             _context = context;
         }

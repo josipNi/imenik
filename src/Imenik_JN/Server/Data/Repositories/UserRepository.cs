@@ -5,6 +5,6 @@ namespace Imenik_JN.Server.Data.Repositories
 {
     public class UserRepository: EntityBaseRepository<User>, IUserRepository
     {
-        public UserRepository(Hrcloud_DB_Context context) : base(context) { }
+        public UserRepository(Imenik_DB_Context context) : base(context) { }
     }
 }
